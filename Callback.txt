@@ -1,0 +1,128 @@
+1. add function
+The add function accepts two numbers and a callback. The callback will print the sum of the two numbers.
+
+javascript
+Copy code
+function add(a, b, callback) {
+    let sum = a + b;
+    callback(sum);
+}
+
+add(5, 3, (result) => {
+    console.log("Sum:", result);
+});
+
+----------------------------------------------------------------------
+2. subtract function
+The subtract function takes two numbers and a callback. The callback will return the difference of the two numbers.
+
+javascript
+Copy code
+function subtract(a, b, callback) {
+    let difference = a - b;
+    callback(difference);
+}
+
+subtract(10, 4, (result) => {
+    console.log("Difference:", result);
+});
+
+----------------------------------------------------------------------
+3. multiply function
+The multiply function accepts two numbers and a callback. The callback will print the product of the two numbers.
+
+javascript
+Copy code
+function multiply(a, b, callback) {
+    let product = a * b;
+    callback(product);
+}
+
+multiply(7, 6, (result) => {
+    console.log("Product:", result);
+});
+
+----------------------------------------------------------------------
+4. divide function
+The divide function accepts two numbers and a callback. The callback will return the quotient of the two numbers.
+
+javascript
+Copy code
+function divide(a, b, callback) {
+    if (b === 0) {
+        callback("Division by zero is not allowed");
+    } else {
+        let quotient = a / b;
+        callback(quotient);
+    }
+}
+
+divide(20, 5, (result) => {
+    console.log("Quotient:", result);
+});
+
+----------------------------------------------------------------------
+5. fizzBuzz function
+The fizzBuzz function takes a number and a callback. The callback will print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.
+
+javascript
+Copy code
+function fizzBuzz(n, callback) {
+    let result = "";
+    if (n % 3 === 0 && n % 5 === 0) {
+        result = "FizzBuzz";
+    } else if (n % 3 === 0) {
+        result = "Fizz";
+    } else if (n % 5 === 0) {
+        result = "Buzz";
+    } else {
+        result = n;
+    }
+    callback(result);
+}
+
+fizzBuzz(15, (result) => {
+    console.log(result);
+});
+
+----------------------------------------------------------------------
+6. isPrime function
+The isPrime function takes a number and a callback to check if the number is prime or not.
+
+javascript
+Copy code
+function isPrime(n, callback) {
+    if (n <= 1) {
+        callback(false);
+        return;
+    }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            callback(false);
+            return;
+        }
+    }
+    callback(true);
+}
+
+isPrime(11, (result) => {
+    console.log("Is Prime:", result);
+});
+
+----------------------------------------------------------------------
+7. findFactorial function
+The findFactorial function takes a number and a callback to return its factorial.
+
+javascript
+Copy code
+function findFactorial(n, callback) {
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    callback(factorial);
+}
+
+findFactorial(5, (result) => {
+    console.log("Factorial:", result);
+});
