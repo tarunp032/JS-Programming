@@ -1,0 +1,171 @@
+
+ 41. Closure with Variable from Outer Scope
+
+
+let count = 10;
+
+function incrementCounter() {
+    return ++count;
+}
+
+console.log(incrementCounter());
+console.log(incrementCounter());
+
+
+What will be the output of the above code?
+11
+12
+
+
+ 42. Default Arguments with Undefined Parameter
+
+
+function greet(name = "Guest") {
+    return `Hello, ${name}`;
+}
+
+console.log(greet(undefined));
+console.log(greet("John"));
+
+
+What will be the output of the above code?
+Hello, Guest
+Hello, John
+
+
+ 43. Rest Operator and Function Arguments
+
+
+function concatStrings(...strings) {
+    return strings.join(", ");
+}
+
+console.log(concatStrings("apple", "banana", "cherry"));
+console.log(concatStrings());
+
+
+What will be the output of the above code?
+Apple,Banana,Cherry
+
+
+ 44. Function with Nested Scope
+
+
+let message = "Global";
+
+function outer() {
+    let message = "Outer";
+    function inner() {
+        let message = "Inner";
+        return message;
+    }
+    return inner();
+}
+
+console.log(outer());
+
+
+What will be the output of the above code?
+
+Inner
+
+
+ 45. Object Method and `this` Context
+
+
+const user = {
+    name: "Alice",
+    getName: function() {
+        return this.name;
+    }
+};
+
+const getName = user.getName;
+console.log(getName());
+
+
+What will be the output of the above code?
+
+Undefined
+
+ 46. Rest Parameters with Named Parameters
+
+
+function showDetails(id, ...details) {
+    return details;
+}
+
+console.log(showDetails(101, "Alice", "Developer", "NYC"));
+
+
+What will be the output of the above code?
+
+[Alice,Developer,NYC]
+
+
+ 47. Default Arguments and Overriding
+
+
+function calculateDiscount(price, discount = 10) {
+    return price - (price * discount) / 100;
+}
+
+console.log(calculateDiscount(100));
+console.log(calculateDiscount(200, 20));
+
+
+What will be the output of the above code?
+
+100 * (100 * 10)/ 100
+200 * (200 * 20)/100
+
+
+ 48. Closures with Private Variables
+
+
+function secretHolder(secret) {
+    return function() {
+        return secret;
+    };
+}
+
+const revealSecret = secretHolder("My Secret");
+console.log(revealSecret());
+
+What will be the output of the above code?
+My Secret
+
+
+ 49. Scope of Variables and Functions
+
+
+var globalVar = "I am global";
+
+function outerFunction() {
+    var localVar = "I am local";
+    return function innerFunction() {
+        return globalVar + " and " + localVar;
+    };
+}
+
+console.log(outerFunction()());
+
+
+What will be the output of the above code?
+I am global and I am local
+
+
+ 50. Function Expression with Default Arguments
+
+
+const divide = function(a = 10, b = 2) {
+    return a / b;
+};
+
+console.log(divide(20, 4));
+console.log(divide(15));
+
+
+What will be the output of the above code?
+5
+7.5
